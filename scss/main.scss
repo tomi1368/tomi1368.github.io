@@ -1,0 +1,283 @@
+@import "./variables";
+@import "./mixins";
+@import "./configs";
+@import "./resets";
+@import "./menu";
+@import "./modal";
+
+
+header{
+    height: 100vh;
+    background-color: $color-secondary;
+    @media screen and (max-width:835px){
+        height: auto;
+    }
+        .color{
+            width:100%;
+            background-color: $light;
+            margin-bottom: 2rem;
+            @include flexible(column, nowrap, center, center, auto);
+            &::after{
+                content: "";
+                display: block;
+                height:0.005rem;
+                width:100%;
+                background-color:$border-grey;
+            }
+        }
+        .header__flex{
+            padding: 1rem 0;
+            @include flexible(row, nowrap, space-between, center, auto);
+        .nav-bar{
+            width:100%;
+            position: relative;
+            @include flexible(row, nowrap, space-between, center, auto);
+            &__logo{
+                @include flexible(row, nowrap, center, center, auto);
+                max-width: 3rem;
+                min-width: 2.3rem;
+            }
+            &__ul{
+                flex:1;
+                @include flexible(row, nowrap,flex-end,center, auto);
+                @media screen and (max-width:835px){
+                    display:none;
+                }
+                &__li{
+                    display:inline-block;
+                    padding: 8px 16px;
+                    position: relative;
+                    border-bottom: 1px solid transparent;
+                    &::after{
+                        content:"";
+                        width:0;
+                        height:2px;
+                        background:$color-fox;
+                        display: block;
+                        margin: auto;
+                        @include transition-ease;
+                    }
+                    &:hover::after{
+                        width:100%;
+                        
+                    }
+                }
+            }
+        } 
+
+    }
+    .section-flex{
+        height:calc(678.25px - 118px);
+        position: relative;
+        
+        @include flexible(row, nowrap, space-between, center, auto);
+        @media screen and (max-width:835px){
+            @include flexible(row, nowrap, center, center, auto);
+            width: 100%;
+        }
+        &__hero{
+            width: 50%;
+            @include flexible(column, nowrap, center, center, auto);
+            @media screen and (max-width:835px){
+                text-align: center;
+                width: 100%;
+                
+            }
+            h1{
+                font-size:50px;
+                line-height: 80px;
+                letter-spacing:2px;
+                color:$light;
+                align-self: flex-start;
+                @media screen and (max-width:835px){
+                    align-self: center;
+                }
+                
+                .hero-span{
+                    display:block;
+                    font-weight: normal;
+                    font-size: 70px;
+                    color:$color-fox;
+                    white-space: nowrap;
+                    margin-left: 20px;
+                    border-right: 1px solid $color-fox;
+                    overflow: hidden;
+                    animation: typing steps(1) 5s alternate infinite , blinky 1.2s infinite;
+                    @media screen and (max-width:835px){
+                        animation: none;
+                    }
+                    @media screen and (max-width:500px){
+                        font-size: inherit;
+                    }
+                
+                }
+            }
+            h3{
+                font-size:20px;
+                letter-spacing:2px;
+                align-self: flex-start;
+                padding:1rem 0 2rem 0.7rem;
+                @media screen and (max-width:835px){
+                    align-self: center;
+                }
+            }
+            a{  
+                margin-left: 0.6rem;
+                padding:1rem;
+                align-self: flex-start;
+                background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+                border-radius: 4rem;
+                @include transition-ease;
+                @media screen and (max-width:835px){
+                    margin:auto;
+                }
+                
+                
+                &:hover{
+                    color:$light;
+                }
+            }
+        }
+        &__image{
+            position:absolute;
+            right:-60px;
+            height:100%;
+            width:50%;
+            @include flexible(row, nowrap, flex-start, center, auto);
+            @media screen and (max-width:1024px){
+                right: -30px;
+            }
+            @media screen and (max-width:948px){
+                right: 0;
+            }
+            @media screen and (max-width:835px){
+                display:none;
+            }
+            img{
+                width:500px;
+                height:500px;
+            }
+        }
+    }
+
+}
+.skill{
+    padding: 7rem 0 7rem 0;
+    background-color: $light;
+    &-container{
+        @include flexible(column, nowrap,center, center, auto);
+        .skill-title{
+            text-align: center;
+            &::after{
+                content: "";
+                display: block;
+                width:100%;
+                height:3px ;
+                background-color:$color-fox;
+            }
+            h2{
+                font-size:$h2-font;
+                letter-spacing:$h2-letter;
+            }
+        }
+        .skill-list{
+            display:grid;
+            padding: 5rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
+            gap: 15rem 5rem;
+            justify-content: center;
+            align-items:center;
+           &__items{
+               width:33%;
+               margin:auto;
+               @include flexible(row, nowrap,center, center, auto);
+           }
+        }
+         
+    }   
+}
+
+.projects{
+    padding: 8rem 0 7rem 0;
+    background-color: $color-secondary;
+    gap: 5rem;
+    @include flexible(column, nowrap,center, center, auto);
+    .skill-title{
+        text-align: center;
+        &::after{
+            content: "";
+            display: block;
+            width:100%;
+            height:3px ;
+            background-color:$color-fox;
+        }
+        h2{
+            font-size:$h2-font;
+            letter-spacing:$h2-letter;
+        }
+    }
+    &-container{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        gap:5rem 2rem;
+        @media screen and (max-width:314px){
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr) );
+            padding:0;
+        }
+        .projects-see{
+            position: relative;
+            display: block;
+            cursor: pointer;
+            height:100%;
+            overflow:hidden;
+            transition: .8s;
+            &:hover>img{
+                @include transition-ease;
+                transform:translate(-1%, 1%) scale(1.1);
+            }
+            img{
+                height:100%;
+            }
+            &__zoom{
+                position:absolute;
+                width:100%;
+                height:100%;
+                background-color:rgba(223, 99, 0,.7);
+                top:0;
+                opacity:0;
+                text-align: center;
+                transition: top ease .3s,opacity ease .3s;
+                @include flexible(wrap, nowrap,center, center, auto);
+                &:hover{
+                    opacity:1;
+                }
+                img{
+                    position:absolute;
+                    top: -100px;
+                    height:50px;
+                    object-fit: contain;
+                }
+                h4{ 
+                    display: block;
+                    margin: auto;
+                    font-size:1.3rem;
+                    position: absolute;
+                    bottom: -100px;
+                    @media screen and (max-width:1024px){
+                        display: none;
+                    }
+                }
+                &:hover>img{
+                    transition: all .4s;
+                    top:40%;
+                }
+                &:hover>h4{
+                    bottom:30%;
+                    transition: all .4s;
+                }
+            }
+        }
+    }
+
+}
+

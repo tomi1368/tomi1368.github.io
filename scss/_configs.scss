@@ -1,0 +1,89 @@
+$primary-color: #272727;
+$secondary-color: #ff652f;
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+@keyframes blinky{
+    0%{
+        border-color: $color-fox;
+    }
+    50%{
+        border-color:transparent;
+    }
+    100%{
+        border-color: $color-fox;
+    }
+}
+
+@keyframes typing{
+    0%{
+        width:0;
+    }
+    10%{
+        width:45px ;
+    }
+    20%{
+        width: 86px;
+    }
+    30%{
+        width:120px;
+    }
+    40%{
+        width:150px;
+    }
+    50%{
+        width: 170px;
+    }
+    60%{
+        width: 205px;
+    }
+    70%{
+        width:240px;
+    }
+    80%{
+        width: 276px;
+    }
+    90%{
+        width: 310px;
+    }
+    93%{
+        width: 330px;
+    }
+    
+    100%{
+        width: 100%;
+    }
+}
+
+
+
+@function set-text-color($color){
+    @if (lightness($color) > 40%){
+        @return #000;
+    }
+    @else{
+        @return #fff;
+    }
+}
+
+
+
+@mixin media-md{
+    @media screen and (min-width:980px){
+        @content;
+    }
+}
+@mixin media-lg{
+    @media screen and (min-width:1024px){
+        @content;
+    }
+}
+@mixin media-xl{
+    @media screen and (min-width:1600px){
+        @content;
+    }
+}
