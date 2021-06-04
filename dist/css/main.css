@@ -627,7 +627,7 @@ header .section-flex__image img {
   overflow: hidden;
   transition: 0.8s;
 }
-.projects-container .projects-see:hover > a > img {
+.projects-container .projects-see:hover > img {
   transition: all 0.5s ease-in-out;
   transform: translate(-1%, 1%) scale(1.1);
 }
