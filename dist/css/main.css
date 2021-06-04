@@ -272,6 +272,7 @@ header .header__flex .nav-bar__logo {
   align-content: auto;
   max-width: 3rem;
   min-width: 2.3rem;
+  cursor: pointer;
 }
 header .header__flex .nav-bar__ul {
   flex: 1;
@@ -467,10 +468,119 @@ header .section-flex__image img {
   width: 33%;
   margin: auto;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   align-content: auto;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.skill-container .skill-list__items .logo {
+  order: 5;
+}
+.skill-container .skill-list__items .logo:hover + .hidden {
+  opacity: 1;
+  top: -70px;
+}
+.skill-container .skill-list__items .html {
+  color: #fff;
+  background-color: #ff4b00;
+}
+.skill-container .skill-list__items .html::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #ff4b00;
+  bottom: -8px;
+  left: 45%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.skill-container .skill-list__items .css {
+  color: #fff;
+  background-color: #2196f3;
+}
+.skill-container .skill-list__items .css::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #2196f3;
+  bottom: -8px;
+  left: 45%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.skill-container .skill-list__items .js {
+  color: #fff;
+  background-color: #ffca28;
+}
+.skill-container .skill-list__items .js::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #ffca28;
+  bottom: -8px;
+  left: 45%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.skill-container .skill-list__items .sass {
+  color: #fff;
+  background-color: #cd6699;
+}
+.skill-container .skill-list__items .sass::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #cd6699;
+  bottom: -8px;
+  left: 45%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.skill-container .skill-list__items .git {
+  color: #fff;
+  background-color: #f05133;
+}
+.skill-container .skill-list__items .git::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #f05133;
+  bottom: -8px;
+  left: 45%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.skill-container .skill-list__items .bt {
+  color: #fff;
+  background-color: #7952b3;
+}
+.skill-container .skill-list__items .bt::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #7952b3;
+  bottom: -8px;
+  left: 45%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.skill-container .skill-list__items__tooltip {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  z-index: 3;
+  background-color: #fff;
+  font: size 20px;
+  letter-spacing: 1px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .projects {
@@ -517,7 +627,7 @@ header .section-flex__image img {
   overflow: hidden;
   transition: 0.8s;
 }
-.projects-container .projects-see:hover > img {
+.projects-container .projects-see:hover > a > img {
   transition: all 0.5s ease-in-out;
   transform: translate(-1%, 1%) scale(1.1);
 }
@@ -554,6 +664,9 @@ header .section-flex__image img {
   font-size: 1.3rem;
   position: absolute;
   bottom: -100px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-weight: 600;
 }
 @media screen and (max-width: 1024px) {
   .projects-container .projects-see__zoom h4 {
