@@ -47,6 +47,31 @@
     width: 100%;
   }
 }
+@keyframes shaking {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-40px);
+  }
+  45% {
+    transform: rotateZ(-20deg);
+  }
+  70% {
+    transform: rotateZ(20deg);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+}
+/*@function set-text-color($color){
+    @if (lightness($color) > 40%){
+        @return #000;
+    }
+    @else{
+        @return #fff;
+    }
+}*/
 *, ::after, ::before {
   margin: 0;
   padding: 0;
@@ -171,6 +196,9 @@ form input, form textarea, form select {
   transition: all 0.5s ease-in-out;
 }
 .nav-bar__burger__span.open {
+  position: fixed;
+  top: 5%;
+  right: 10%;
   transform: rotate(720deg);
   background: transparent;
 }
@@ -219,6 +247,7 @@ form input, form textarea, form select {
 }
 .bar .bar-ok.open {
   transform: translateY(0);
+  padding-right: 0px;
 }
 
 header {
@@ -273,6 +302,20 @@ header .header__flex .nav-bar__logo {
   max-width: 3rem;
   min-width: 2.3rem;
   cursor: pointer;
+  z-index: 9999;
+  position: relative;
+  overflow: hidden;
+}
+header .header__flex .nav-bar__logo::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: #2196f3;
+  border-radius: 50%;
+}
+header .header__flex .nav-bar__logo img {
+  z-index: 2000;
 }
 header .header__flex .nav-bar__ul {
   flex: 1;
@@ -389,6 +432,7 @@ header .section-flex__hero a {
   align-self: flex-start;
   background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
   border-radius: 4rem;
+  letter-spacing: 2px;
   transition: all 0.5s ease-in-out;
 }
 @media screen and (max-width: 835px) {
@@ -428,6 +472,10 @@ header .section-flex__image {
 header .section-flex__image img {
   width: 500px;
   height: 500px;
+}
+header .section-flex__image img:hover {
+  animation: shaking 0.7s linear;
+  transform-origin: center;
 }
 
 .skill {
@@ -615,7 +663,7 @@ header .section-flex__image img {
 }
 @media screen and (max-width: 314px) {
   .projects-container {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     padding: 0;
   }
 }
@@ -680,6 +728,11 @@ header .section-flex__image img {
 .projects-container .projects-see__zoom:hover > h4 {
   bottom: 30%;
   transition: all 0.4s;
+}
+
+.footer {
+  padding: 8rem 0 7rem 0;
+  background-color: #1d1b1b;
 }
 
 /*# sourceMappingURL=main.css.map */

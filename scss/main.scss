@@ -36,6 +36,20 @@ header{
                 max-width: 3rem;
                 min-width: 2.3rem;
                 cursor: pointer;
+                z-index: 9999;
+                position: relative;
+                overflow: hidden;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    height:20px;
+                    width: 20px;
+                    background-color: #2196f3;
+                    border-radius:50%;
+                }
+                img{
+                    z-index: 2000;
+                }
             }
             &__ul{
                 flex:1;
@@ -128,6 +142,7 @@ header{
                 align-self: flex-start;
                 background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
                 border-radius: 4rem;
+                letter-spacing: 2px;
                 @include transition-ease;
                 @media screen and (max-width:835px){
                     margin:auto;
@@ -157,6 +172,10 @@ header{
             img{
                 width:500px;
                 height:500px;
+                &:hover{
+                    animation: shaking 0.7s  linear;
+                    transform-origin:center;
+                }
             }
         }
     }
@@ -342,7 +361,7 @@ header{
         grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
         gap:5rem 2rem;
         @media screen and (max-width:314px){
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr) );
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) );
             padding:0;
         }
         .projects-see{
@@ -405,3 +424,8 @@ header{
 
 }
 
+
+.footer{
+    padding: 8rem 0 7rem 0;
+    background-color: $dark;
+}

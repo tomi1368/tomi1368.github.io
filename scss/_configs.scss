@@ -1,5 +1,6 @@
 $primary-color: #272727;
 $secondary-color: #ff652f;
+$dark:#1d1b1b;
 
 @mixin transition-ease {
     transition: all 0.5s ease-in-out;
@@ -59,16 +60,36 @@ $secondary-color: #ff652f;
     }
 }
 
+@keyframes shaking {
+
+    0%{
+        transform:translateY(0px);
+    }
+    20%{
+        transform:translateY(-40px);
+    }
+    45%{
+        transform:rotateZ(-20deg)
+    }
+    70%{
+        transform:rotateZ(20deg)
+    }
+  
+    80%{
+        transform:translateY(0px);
+    }
+
+}
 
 
-@function set-text-color($color){
+/*@function set-text-color($color){
     @if (lightness($color) > 40%){
         @return #000;
     }
     @else{
         @return #fff;
     }
-}
+}*/
 
 
 

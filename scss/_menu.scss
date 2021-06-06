@@ -39,6 +39,9 @@
             @include transition-ease;
         }
         &.open{
+            position:fixed;
+            top: 5%;
+            right: 10%;
             transform: rotate(720deg);
             background: transparent;
             &::before{
@@ -87,6 +90,7 @@
         }
         &.open{
             transform: translateY(0);
+            padding-right: 0px;
         
         }
     }
