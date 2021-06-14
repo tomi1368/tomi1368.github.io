@@ -36,16 +36,19 @@ header{
                 max-width: 3rem;
                 min-width: 2.3rem;
                 cursor: pointer;
-                z-index: 9999;
                 position: relative;
-                overflow: hidden;
                 &::after{
                     content: "";
                     position: absolute;
-                    height:20px;
-                    width: 20px;
-                    background-color: #2196f3;
+                    height: 25px;
+                    width: 25px;
+                    background-color: $color-fox;
                     border-radius:50%;
+                    display:grid;
+                    place-items: center;
+                }
+                &:hover::after{
+                    animation: pulsing 1000ms infinite;
                 }
                 img{
                     z-index: 2000;

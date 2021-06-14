@@ -64,6 +64,16 @@
     transform: translateY(0px);
   }
 }
+@keyframes pulsing {
+  0% {
+    transform: scale(1.5);
+    opacity: 0.72;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
 /*@function set-text-color($color){
     @if (lightness($color) > 40%){
         @return #000;
@@ -211,6 +221,7 @@ form input, form textarea, form select {
 }
 
 .bar {
+  font-family: "Nunito", sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -302,17 +313,20 @@ header .header__flex .nav-bar__logo {
   max-width: 3rem;
   min-width: 2.3rem;
   cursor: pointer;
-  z-index: 9999;
   position: relative;
-  overflow: hidden;
 }
 header .header__flex .nav-bar__logo::after {
   content: "";
   position: absolute;
-  height: 20px;
-  width: 20px;
-  background-color: #2196f3;
+  height: 25px;
+  width: 25px;
+  background-color: #df6300;
   border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+header .header__flex .nav-bar__logo:hover::after {
+  animation: pulsing 1000ms infinite;
 }
 header .header__flex .nav-bar__logo img {
   z-index: 2000;
