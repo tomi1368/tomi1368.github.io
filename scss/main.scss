@@ -361,10 +361,11 @@ header{
     }
     &-container{
         display:grid;
-        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
         gap:5rem 2rem;
         @media screen and (max-width:314px){
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) );
             padding:0;
         }
         .projects-see{
