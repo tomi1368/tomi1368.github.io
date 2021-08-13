@@ -3,7 +3,6 @@ HamburgerButton = document.querySelector(".nav-bar__burger__span"),
 nav = document.querySelector(".bar"),
 menuNav = document.querySelector(".bar-ok"),
 ocult = document.querySelector(".section-flex");
-
 let showMenu = false;
 
 menuBtn.addEventListener("click",()=>{
@@ -22,7 +21,16 @@ menuBtn.addEventListener("click",()=>{
     }
 })
 
-
+document.addEventListener("click", e=>{
+    if(e.target.matches(".nav-bar__ul__li__link")){
+        HamburgerButton.classList.remove("open");
+        nav.classList.remove("open");
+        menuNav.classList.remove("open");
+        ocult.classList.remove("ocult");
+        showMenu = false;
+    }
+})
+//Cuando pongo el responsive la libreria me hace un espacio en blanco
 if (window.innerWidth > 300){
     window.sr = ScrollReveal();
         sr.reveal(".projects-container", {

@@ -193,6 +193,7 @@ header {
         width: 100%;
         height: 3px;
         background-color: $color-fox;
+        animation: loading 6s ease-in-out 1.5s infinite;
       }
       h2 {
         font-size: $h2-font;
@@ -383,7 +384,7 @@ header {
   gap: 5rem;
   overflow: hidden;
   @include flexible(column, nowrap, center, center, auto);
-  .skill-title {
+  .skill-title{
     text-align: center;
     &::after {
       content: "";
@@ -391,6 +392,8 @@ header {
       width: 100%;
       height: 3px;
       background-color: $color-fox;
+      transform: scaleX(1);
+      animation: loading 6s ease-in-out 1.5s infinite;
     }
     h2 {
       font-size: $h2-font;
@@ -404,6 +407,9 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10rem 5rem;
     padding-bottom: 7rem;
+    a{
+      height:100%;
+    }
     .projects-see {
       position: relative;
       display: block;
@@ -468,12 +474,16 @@ header {
 }
 
 .footer {
-  padding: 8rem 0 7rem 0;
+  padding: 10rem 0 2rem 0;
   background-color: $dark;
   position: relative;
+  font-family: Montserrat, sans-serif;
+  text-align: center;
   > ::before {
     content: "";
     height: 2rem;
+    transform:scaleX(0.5);
+    transform-origin:left;
     width: 100%;
     background-color: $color-fox;
     position: absolute;
@@ -481,6 +491,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
+    animation: loading 6s ease-in-out 1.5s infinite;
   }
   &-flex {
     display: grid;
@@ -488,7 +499,6 @@ header {
     align-items: center;
     gap: 4rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    text-align: center;
     &__about {
       @include flexible(column, wrap, center, center, auto);
       gap: 2rem;
@@ -543,5 +553,11 @@ header {
         }
       }
     }
+  }
+  & .copyright {
+    margin-top: 4rem;
+    color:grey;
+    background-color:#111;
+    padding:2rem;
   }
 }
