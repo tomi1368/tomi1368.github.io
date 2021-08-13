@@ -4,7 +4,23 @@ nav = document.querySelector(".bar"),
 menuNav = document.querySelector(".bar-ok"),
 ocult = document.querySelector(".section-flex");
 
+let showMenu = false;
 
+menuBtn.addEventListener("click",()=>{
+    if (!showMenu) {
+        HamburgerButton.classList.add("open");
+        nav.classList.add("open");
+        menuNav.classList.add("open");
+        ocult.classList.add("ocult");
+        showMenu = true;
+    } else {
+        HamburgerButton.classList.remove("open");
+        nav.classList.remove("open");
+        menuNav.classList.remove("open");
+        ocult.classList.remove("ocult");
+        showMenu = false;
+    }
+})
 
 
 if (window.innerWidth > 300){
@@ -36,20 +52,4 @@ if (window.innerWidth > 300){
 
 
 
-let showMenu = false;
 
-menuBtn.addEventListener("click",()=>{
-    if (!showMenu) {
-        HamburgerButton.classList.add("open");
-        nav.classList.add("open");
-        menuNav.classList.add("open");
-        ocult.classList.add("ocult");
-        showMenu = true;
-    } else {
-        HamburgerButton.classList.remove("open");
-        nav.classList.remove("open");
-        menuNav.classList.remove("open");
-        ocult.classList.remove("ocult");
-        showMenu = false;
-    }
-})
